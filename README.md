@@ -10,7 +10,11 @@ This application provides a complete solution for managing critical SAP data rep
 - **Standalone Mode** (Default): Demonstrates all features without requiring HVR installation
 - **Integrated Mode**: Connects to actual HVR 6.0 for real production data replication
 
-See [HVR_INTEGRATION.md](./HVR_INTEGRATION.md) for complete integration guide.
+## Quick Links
+
+- 📘 **[SAP Replication Guide](./SAP_REPLICATION_GUIDE.md)** - Step-by-step guide to replicate SAP data
+- 🔌 **[HVR Integration Guide](./HVR_INTEGRATION.md)** - Complete HVR 6.0 integration documentation
+- 🚀 **[Quick Start](#getting-started)** - Get up and running in minutes
 
 ## Features
 

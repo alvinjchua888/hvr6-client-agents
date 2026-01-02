@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { SystemHealth } from '../types';
-import { healthService, agentService, jobService } from '../services/api';
+import { healthService } from '../services/api';
 import { Activity, TrendingUp, AlertCircle, Clock } from 'lucide-react';
 import './Dashboard.css';
 

@@ -6,6 +6,12 @@ A comprehensive multi-agent architecture with a modern web-based user interface 
 
 This application provides a complete solution for managing critical SAP data replication operations using Fivetran's HVR 6.0 technology. It implements a multi-agent architecture that handles all aspects of data replication from SAP systems to various target platforms.
 
+**✅ HVR 6.0 Integration:** This system can integrate directly with Fivetran's HVR 6.0 product via REST API. It operates in two modes:
+- **Standalone Mode** (Default): Demonstrates all features without requiring HVR installation
+- **Integrated Mode**: Connects to actual HVR 6.0 for real production data replication
+
+See [HVR_INTEGRATION.md](./HVR_INTEGRATION.md) for complete integration guide.
+
 ## Features
 
 ### 🤖 Multi-Agent Architecture
@@ -141,6 +147,65 @@ Build and run in production:
 npm run build
 npm start
 ```
+
+## HVR 6.0 Integration
+
+### Standalone Mode (Default)
+
+The application runs in standalone mode by default, simulating all HVR operations for demonstration and testing purposes. No HVR 6.0 installation is required.
+
+### Integrated Mode with HVR 6.0
+
+To connect to an actual HVR 6.0 installation:
+
+1. **Install HVR 6.0**: Follow [Fivetran's HVR 6.0 installation guide](https://docs.fivetran.com/hvr6/getting-started)
+
+2. **Configure connection** in `.env`:
+```env
+HVR_API_BASE_URL=http://your-hvr-server:4340
+HVR_API_USERNAME=admin
+HVR_API_PASSWORD=your-password
+HVR_INTEGRATED_MODE=true  # Enable real HVR integration
+```
+
+3. **Restart the application**:
+```bash
+npm start
+```
+
+The system will automatically use the HVR 6.0 REST API for all replication operations:
+- **Refresh Agent** → Calls HVR's `POST /api/jobs/refresh`
+- **CDC Agent** → Calls HVR's `POST /api/jobs/capture`
+- **Integration Agent** → Calls HVR's `POST /api/jobs/integrate`
+- **Compare Agent** → Calls HVR's `POST /api/jobs/compare`
+
+### HVR API Client
+
+The included HVR API client (`src/server/hvr/HVRClient.ts`) provides full integration with HVR 6.0:
+
+```typescript
+import { getHVRClient } from './hvr/HVRClient';
+
+const hvr = getHVRClient();
+
+// Check HVR connectivity
+await hvr.healthCheck();
+
+// Start operations
+await hvr.startRefresh('channel-name', ['TABLE1', 'TABLE2']);
+await hvr.startCapture('channel-name');
+await hvr.startIntegrate('channel-name');
+
+// Monitor jobs
+const status = await hvr.getJobStatus(jobId);
+```
+
+**📖 Complete Integration Guide:** See [HVR_INTEGRATION.md](./HVR_INTEGRATION.md) for detailed documentation on:
+- HVR API endpoints used
+- Authentication configuration
+- Channel and location management
+- Error handling and troubleshooting
+- Production deployment examples
 
 ## API Documentation
 

@@ -1,0 +1,180 @@
+.dashboard {
+  padding: 2rem 0;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  color: var(--text-secondary);
+}
+
+.dashboard-loading,
+.dashboard-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+  color: var(--text-secondary);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: var(--surface);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon.agents {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.stat-icon.jobs {
+  background-color: rgba(139, 92, 246, 0.2);
+  color: #8b5cf6;
+}
+
+.stat-icon.performance {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.stat-icon.memory {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-breakdown {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.stat-detail {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.stat-detail.success {
+  color: var(--success-color);
+}
+
+.stat-detail.idle {
+  color: var(--text-secondary);
+}
+
+.stat-detail.error {
+  color: var(--error-color);
+}
+
+.progress-bar {
+  height: 6px;
+  background-color: var(--background);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+.dashboard-sections {
+  display: grid;
+  gap: 1rem;
+}
+
+.agent-status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.status-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.status-indicators {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+}

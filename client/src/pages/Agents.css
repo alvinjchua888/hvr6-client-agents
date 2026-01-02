@@ -1,0 +1,72 @@
+.agents-page {
+  padding: 2rem 0;
+}
+
+.agents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.agents-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.agents-subtitle {
+  color: var(--text-secondary);
+}
+
+.agents-loading,
+.agents-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+  color: var(--text-secondary);
+}
+
+.agents-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: var(--surface-light);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .agents-grid {
+    grid-template-columns: 1fr;
+  }
+}

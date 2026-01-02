@@ -1,0 +1,96 @@
+.agent-card {
+  transition: transform 0.2s;
+}
+
+.agent-card:hover {
+  transform: translateY(-2px);
+}
+
+.agent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.agent-info h3 {
+  font-size: 1.125rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.agent-type {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.agent-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: var(--background);
+  border-radius: 6px;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.metric-icon {
+  color: var(--text-secondary);
+}
+
+.metric-icon.success {
+  color: var(--success-color);
+}
+
+.metric-icon.error {
+  color: var(--error-color);
+}
+
+.metric-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.metric-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.agent-capabilities {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.capabilities-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.capabilities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.capability-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--surface-light);
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
